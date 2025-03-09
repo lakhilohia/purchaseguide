@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Product Comparison Guide 2024 | Lohia Consultancy Services</title>
+    <meta name="description" content="Expert product comparisons and buying guides by Lohia Consultancy Services. Find the best deals on laptops, electronics, and more. Founded by Adv Lakhi Lohia.">
+    <meta name="keywords" content="product comparison, buying guide, Lohia Consultancy Services, Adv Lakhi Lohia, Nagaon Smart Bazar, T-Bites, StudyMadeEase8761">
+    <meta name="author" content="Adv Lakhi Lohia">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Best Product Comparison Guide 2024 | Lohia Consultancy Services">
+    <meta property="og:description" content="Expert product comparisons and buying guides. Find the best deals on laptops, electronics, and more.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://lohiaconsultancy.com/product-guide" />
+    <style>
+        :root {
+            --primary: #2a5cbe;
+            --secondary: #e7f1ff;
+            --accent: #ff4757;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .comparison-tool {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.3s;
+            background: white;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4444;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .price {
+            color: var(--primary);
+            font-size: 1.4em;
+            margin: 10px 0;
+        }
+
+        .pros-cons {
+            margin: 15px 0;
+            padding: 10px;
+            background: var(--secondary);
+            border-radius: 8px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .rating-bar {
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+
+        .rating-fill {
+            height: 100%;
+            background: #ffd700;
+            border-radius: 4px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), #1a3a7a);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .company-info {
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        .buy-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .buy-btn:hover {
+            background: #ff2d40;
+        }
+
+        .comparison-chart {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .worth-it-meter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .meter-fill {
+            height: 10px;
+            background: linear-gradient(90deg, #ff4757, #3498db);
+            border-radius: 5px;
+        }
+
+        .usage-guide {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+        .usage-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .usage-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-desc {
+            margin-top: 1rem;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .comparison-matrix {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        .spec-highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Popup Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation: popupSlide 0.3s ease-out;
+        }
+
+        @keyframes popupSlide {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .popup-close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #1a3a7a;
+        }
+
+        .success-message {
+            display: none;
+            color: green;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .review-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .review-section h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .review-section p {
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .top-nav {
+            background: var(--primary);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .nav-link.active {
+            background: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Add top navigation -->
+    <nav class="top-nav">
+        <a href="#laptops" class="nav-link active">HP Laptops</a>
+        <a href="washing-machines.html" class="nav-link">Washing Machines</a>
+        <a href="#contact" class="nav-link" onclick="showPopup()">Get Recommendations</a>
+    </nav>
+
+    <div class="comparison-tool">
+        <header class="header">
+            <h1>Ultimate HP Laptop Comparison Guide 2024</h1>
+            <div class="company-info">
+                By Lohia Consultancy Services | Founded by Adv Lakhi Lohia
+            </div>
+            <p class="header-desc">Expert analysis of the best HP laptops for every need and budget</p>
+        </header>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterProducts('all')">All HP Models</button>
+            <button class="filter-btn" onclick="filterProducts('gaming')">Gaming</button>
+            <button class="filter-btn" onclick="filterProducts('student')">Student</button>
+            <button class="filter-btn" onclick="filterProducts('business')">Business</button>
+            <button class="filter-btn" onclick="filterProducts('premium')">Premium</button>
+        </div>
+
+        <div class="usage-guide">
+            <h2>Choose Your Perfect HP Laptop</h2>
+            <div class="usage-cards">
+                <div class="usage-card">
+                    <h3>For Students</h3>
+                    <p>Look for: Portability, battery life, value</p>
+                    <p>Recommended: HP Pavilion or HP 15s</p>
+                </div>
+                <div class="usage-card">
+                    <h3>For Gamers</h3>
+                    <p>Look for: RTX Graphics, high refresh rate, cooling</p>
+                    <p>Recommended: HP Victus or HP Pavilion Gaming</p>
+                </div>
+                <div class="usage-card">
+                    <h3>For Professionals</h3>
+                    <p>Look for: Performance, build quality, security</p>
+                    <p>Recommended: HP Envy or HP ProBook</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card" data-category="gaming">
+                <div class="badge">Best Gaming</div>
+                <h2>HP Victus Gaming</h2>
+                <div class="price">Best Performance-Price Ratio</div>
+                <div class="pros-cons">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>RTX 3050 Graphics</li>
+                        <li>144Hz FHD Display</li>
+                        <li>Advanced Cooling System</li>
+                        <li>Excellent Gaming Performance</li>
+                    </ul>
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Average Battery Life</li>
+                        <li>Slightly Heavy</li>
+                    </ul>
+                </div>
+                <div class="worth-it-meter">
+                    <span>Gaming Value Score:</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 92%"></div>
+                    </div>
+                    <span>9.2/10</span>
+                </div>
+                <button class="buy-btn" onclick="window.open('https://amzn.to/41zyf63')">View on Amazon</button>
+            </div>
+
+            <div class="product-card" data-category="student">
+                <div class="badge">Best for Students</div>
+                <h2>HP Pavilion 14</h2>
+                <div class="price">Best Value for Students</div>
+                <div class="pros-cons">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Lightweight Design</li>
+                        <li>Good Battery Life</li>
+                        <li>Anti-Glare Display</li>
+                        <li>Fast SSD Storage</li>
+                    </ul>
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Integrated Graphics</li>
+                        <li>Limited Ports</li>
+                    </ul>
+                </div>
+                <div class="worth-it-meter">
+                    <span>Student Value Score:</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 88%"></div>
+                    </div>
+                    <span>8.8/10</span>
+                </div>
+                <button class="buy-btn" onclick="window.open('https://amzn.to/43t3XVc')">View on Amazon</button>
+            </div>
+
+            <div class="product-card" data-category="premium">
+                <div class="badge">Best for Professionals</div>
+                <h2>HP Envy x360</h2>
+                <div class="price">Premium Choice</div>
+                <div class="pros-cons">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>360° Convertible Design</li>
+                        <li>AMOLED Display</li>
+                        <li>Premium Build</li>
+                        <li>Pen Support</li>
+                    </ul>
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Premium Price</li>
+                        <li>No Dedicated GPU</li>
+                    </ul>
+                </div>
+                <div class="worth-it-meter">
+                    <span>Professional Value Score:</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 93%"></div>
+                    </div>
+                    <span>9.3/10</span>
+                </div>
+                <button class="buy-btn" onclick="window.open('https://amzn.to/3QYrDcx')">View on Amazon</button>
+            </div>
+        </div>
+
+        <section class="comparison-matrix">
+            <h2>Detailed Comparison Matrix</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Best For</th>
+                        <th>Key Features</th>
+                        <th>Performance</th>
+                        <th>Value Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HP Victus Gaming</td>
+                        <td>Gaming & Heavy Tasks</td>
+                        <td>RTX 3050 Graphics, 144Hz FHD Display</td>
+                        <td>Excellent</td>
+                        <td>9.2/10</td>
+                    </tr>
+                    <tr>
+                        <td>HP Pavilion 14</td>
+                        <td>Students & Daily Use</td>
+                        <td>Lightweight Design, Good Battery Life</td>
+                        <td>Good</td>
+                        <td>8.8/10</td>
+                    </tr>
+                    <tr>
+                        <td>HP Envy x360</td>
+                        <td>Professionals</td>
+                        <td>360° Convertible Design, AMOLED Display</td>
+                        <td>Very Good</td>
+                        <td>9.3/10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="buying-guide">
+            <h2>Smart Buying Guide</h2>
+            <div class="guide-content">
+                <h3>How to Choose the Right HP Laptop:</h3>
+                <ul>
+                    <li><strong>For Students:</strong> Focus on battery life and portability. The Pavilion series offers the best value.</li>
+                    <li><strong>For Gamers:</strong> Look for models with dedicated GPU and good cooling. The Victus series is ideal.</li>
+                    <li><strong>For Professionals:</strong> Consider display quality and build. The Envy series offers the best balance.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Add washing machines section -->
+        <section class="appliances-section">
+            <h2>Popular Washing Machine Guides</h2>
+            <div class="product-grid">
+                <div class="product-card" data-category="washing-machines">
+                    <div class="badge">Best Seller</div>
+                    <h2>Top Washing Machines Under ₹25,000</h2>
+                    <div class="pros-cons">
+                        <ul>
+                            <li>Comprehensive comparison of budget models</li>
+                            <li>Best value for money options</li>
+                            <li>Detailed features analysis</li>
+                        </ul>
+                    </div>
+                    <button class="buy-btn" onclick="window.open('https://amzn.to/41Nz4cR')">View Guide</button>
+                </div>
+
+                <div class="product-card" data-category="washing-machines">
+                    <div class="badge">Premium Pick</div>
+                    <h2>Best Front Load Washing Machines</h2>
+                    <div class="pros-cons">
+                        <ul>
+                            <li>High-end model comparisons</li>
+                            <li>Advanced features guide</li>
+                            <li>Energy efficiency ratings</li>
+                        </ul>
+                    </div>
+                    <button class="buy-btn" onclick="window.open('https://amzn.to/3QT8d90')">View Guide</button>
+                </div>
+
+                <div class="product-card" data-category="washing-machines">
+                    <div class="badge">Smart Features</div>
+                    <h2>Smart Washing Machines Guide</h2>
+                    <div class="pros-cons">
+                        <ul>
+                            <li>Latest technology comparison</li>
+                            <li>Smart home integration</li>
+                            <li>Feature-rich models</li>
+                        </ul>
+                    </div>
+                    <button class="buy-btn" onclick="window.open('https://amzn.to/3FdJCJH')">View Guide</button>
+                </div>
+
+                <div class="product-card" data-category="washing-machines">
+                    <div class="badge">Top Rated</div>
+                    <h2>Best Top Load Washing Machines</h2>
+                    <div class="pros-cons">
+                        <ul>
+                            <li>Popular models compared</li>
+                            <li>Efficiency ratings</li>
+                            <li>Value for money analysis</li>
+                        </ul>
+                    </div>
+                    <button class="buy-btn" onclick="window.open('https://amzn.to/3Dso23w')">View Guide</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Add popup HTML after the comparison-tool div -->
+    <div class="popup-overlay" id="contactPopup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">×</span>
+            <h2>Get Personalized Laptop Recommendations</h2>
+            <p>Share your details and we'll help you find the perfect HP laptop for your needs!</p>
+            <form class="contact-form" id="recommendationForm" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="usage">Primary Usage</label>
+                    <select id="usage" required>
+                        <option value="">Select your primary usage</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="student">Student</option>
+                        <option value="business">Business/Professional</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="budget">Budget Range</label>
+                    <select id="budget" required>
+                        <option value="">Select your budget range</option>
+                        <option value="low">Under ₹50,000</option>
+                        <option value="medium">₹50,000 - ₹70,000</option>
+                        <option value="high">Above ₹70,000</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Get Recommendations</button>
+                <div class="success-message" id="successMessage">
+                    Thank you! We'll send your personalized recommendations shortly.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add floating contact button before closing body tag -->
+    <button 
+        onclick="showPopup()" 
+        style="position: fixed; bottom: 20px; right: 20px; 
+               background: var(--primary); color: white; 
+               padding: 15px 25px; border: none; 
+               border-radius: 25px; cursor: pointer;
+               box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+               font-weight: bold;">
+        Get Personal Recommendations
+    </button>
+
+    <script>
+        // Enhanced filtering functionality
+        function filterProducts(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => 
+                btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.style.display = (category === 'all' || card.dataset.category === category) 
+                    ? 'block' : 'none';
+            });
+        }
+
+        // Updated product data for HP laptops
+        const products = [
+            {
+                name: "HP Victus Gaming",
+                category: "gaming",
+                link: "https://amzn.to/41zyf63",
+                worthItScore: 9.2,
+                pros: [
+                    "RTX 3050 Graphics",
+                    "144Hz FHD Display",
+                    "Excellent Gaming Performance",
+                    "Advanced Cooling System"
+                ],
+                cons: [
+                    "Average Battery Life",
+                    "Slightly Heavy"
+                ],
+                badge: "Best Gaming"
+            },
+            {
+                name: "HP Pavilion 14",
+                category: "student",
+                link: "https://amzn.to/43t3XVc",
+                worthItScore: 8.8,
+                pros: [
+                    "Lightweight Design",
+                    "Good Battery Life",
+                    "Anti-Glare Display",
+                    "Fast SSD Storage"
+                ],
+                cons: [
+                    "Integrated Graphics",
+                    "Limited Ports"
+                ],
+                badge: "Best for Students"
+            },
+            {
+                name: "HP Envy x360",
+                category: "premium",
+                link: "https://amzn.to/3QYrDcx",
+                worthItScore: 9.3,
+                pros: [
+                    "360° Convertible Design",
+                    "AMOLED Display",
+                    "Premium Build",
+                    "Pen Support"
+                ],
+                cons: [
+                    "Premium Price",
+                    "No Dedicated GPU"
+                ],
+                badge: "Premium Choice"
+            },
+            {
+                name: "HP 15s",
+                category: "student",
+                link: "https://amzn.to/3QQe3YG",
+                worthItScore: 8.5,
+                pros: [
+                    "Affordable Price",
+                    "Good Performance",
+                    "Micro-Edge Display",
+                    "Long Battery Life"
+                ],
+                cons: [
+                    "Basic Build Quality",
+                    "Average Speakers"
+                ],
+                badge: "Value Pick"
+            },
+            {
+                name: "HP ProBook",
+                category: "business",
+                link: "https://amzn.to/4hg0D2X",
+                worthItScore: 9.0,
+                pros: [
+                    "Business-Grade Security",
+                    "Durable Build",
+                    "Professional Design",
+                    "Good Performance"
+                ],
+                cons: [
+                    "Higher Price Point",
+                    "Heavier Than Competitors"
+                ],
+                badge: "Business Choice"
+            }
+        ];
+
+        // Updated comparison data
+        const comparisonData = {
+            gaming: {
+                title: "Gaming Performance Comparison",
+                models: [
+                    {
+                        name: "HP Victus",
+                        gpu: "RTX 3050",
+                        display: "144Hz FHD",
+                        cooling: "Advanced",
+                        price: "Premium"
+                    },
+                    {
+                        name: "HP Pavilion Gaming",
+                        gpu: "GTX 1650",
+                        display: "60Hz FHD",
+                        cooling: "Standard",
+                        price: "Mid-Range"
+                    }
+                ]
+            },
+            student: {
+                title: "Student Laptop Comparison",
+                models: [
+                    {
+                        name: "HP Pavilion 14",
+                        battery: "Up to 8 hrs",
+                        weight: "1.41 kg",
+                        features: "Anti-Glare",
+                        price: "Mid-Range"
+                    },
+                    {
+                        name: "HP 15s",
+                        battery: "Up to 7 hrs",
+                        weight: "1.69 kg",
+                        features: "Micro-Edge",
+                        price: "Budget"
+                    }
+                ]
+            },
+            premium: {
+                title: "Premium Laptop Comparison",
+                models: [
+                    {
+                        name: "HP Envy x360",
+                        display: "AMOLED",
+                        build: "Premium",
+                        features: "360° Design",
+                        price: "High-End"
+                    },
+                    {
+                        name: "HP ProBook",
+                        display: "FHD IPS",
+                        build: "Business-Grade",
+                        features: "Security Features",
+                        price: "High-End"
+                    }
+                ]
+            }
+        };
+
+        // Add detailed review section
+        const reviews = {
+            gaming: {
+                title: "Gaming Laptops Review Summary",
+                content: `HP's gaming lineup offers excellent value with the Victus series leading the charge. 
+                The RTX 3050 provides solid 1080p gaming performance, while the 144Hz display ensures 
+                smooth gameplay. Cooling system handles intensive gaming sessions well, though battery 
+                life is average as expected for gaming laptops.`
+            },
+            student: {
+                title: "Student Laptops Review Summary",
+                content: `The HP Pavilion and 15s series are perfect for students, offering a balance of 
+                performance and portability. Battery life is sufficient for a full day of classes, and 
+                the anti-glare displays reduce eye strain during long study sessions. Build quality varies 
+                between models but generally meets student needs.`
+            },
+            premium: {
+                title: "Premium Laptops Review Summary",
+                content: `HP's premium lineup, particularly the Envy series, offers exceptional build quality 
+                and features. The AMOLED displays provide stunning visuals, while the convertible design 
+                adds versatility. Business features in the ProBook series include enhanced security and 
+                durability, justifying the higher price point.`
+            }
+        };
+
+        // Add recommendation logic
+        function recommendLaptop(usage, budget) {
+            switch(usage) {
+                case 'gaming':
+                    return budget === 'high' ? 'HP Victus Gaming' : 'HP Pavilion Gaming';
+                case 'student':
+                    return budget === 'high' ? 'HP Pavilion 14' : 'HP 15s';
+                case 'business':
+                    return budget === 'high' ? 'HP Envy x360' : 'HP ProBook';
+                default:
+                    return 'HP Pavilion 14';
+            }
+        }
+
+        // Add review section update function
+        function updateReviews() {
+            const container = document.querySelector('.comparison-matrix');
+            Object.values(reviews).forEach(review => {
+                const section = document.createElement('div');
+                section.className = 'review-section';
+                section.innerHTML = `
+                    <h3>${review.title}</h3>
+                    <p>${review.content}</p>
+                `;
+                container.appendChild(section);
+            });
+        }
+
+        // Initialize with reviews
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProducts();
+            updateComparisonTables();
+            updateReviews();
+        });
+
+        function updateComparisonTables() {
+            const container = document.querySelector('.comparison-matrix');
+            Object.values(comparisonData).forEach(category => {
+                const table = document.createElement('table');
+                table.className = 'comparison-table';
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th colspan="5">${category.title}</th>
+                        </tr>
+                        <tr>
+                            <th>Model</th>
+                            ${Object.keys(category.models[0]).slice(1).map(key => 
+                                `<th>${key.charAt(0).toUpperCase() + key.slice(1)}</th>`
+                            ).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${category.models.map(model => `
+                            <tr>
+                                <td>${model.name}</td>
+                                ${Object.values(model).slice(1).map(value => 
+                                    `<td>${value}</td>`
+                                ).join('')}
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                `;
+                container.appendChild(table);
+            });
+        }
+
+        // Add these functions after existing JavaScript
+        function showPopup() {
+            document.getElementById('contactPopup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('contactPopup').style.display = 'none';
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const usage = document.getElementById('usage').value;
+            const budget = document.getElementById('budget').value;
+
+            // Get recommended laptop based on usage and budget
+            const recommendedLaptop = recommendLaptop(usage, budget);
+
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            successMessage.innerHTML = `Thank you ${name}! We'll send your personalized recommendation for the ${recommendedLaptop} to ${email} shortly.`;
+
+            // Reset form after 3 seconds and close popup
+            setTimeout(() => {
+                document.getElementById('recommendationForm').reset();
+                successMessage.style.display = 'none';
+                closePopup();
+            }, 3000);
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('contactPopup').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closePopup();
+            }
+        });
+
+        // Dynamic product loading
+        function loadProducts() {
+            const grid = document.querySelector('.product-grid');
+            grid.innerHTML = ''; // Clear existing products
+            
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.dataset.category = product.category;
+                
+                card.innerHTML = `
+                    <div class="badge">${product.badge}</div>
+                    <h2>${product.name}</h2>
+                    <div class="price">Check Price on Amazon</div>
+                    <div class="pros-cons">
+                        <h4>✅ Pros:</h4>
+                        <ul>
+                            ${product.pros.map(pro => `<li>${pro}</li>`).join('')}
+                        </ul>
+                        <h4>❌ Cons:</h4>
+                        <ul>
+                            ${product.cons.map(con => `<li>${con}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="worth-it-meter">
+                        <span>Worth It Score:</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill" style="width: ${product.worthItScore * 10}%"></div>
+                        </div>
+                        <span>${product.worthItScore}/10</span>
+                    </div>
+                    <button class="buy-btn" onclick="window.open('${product.link}')">View on Amazon</button>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
